@@ -1,0 +1,23 @@
+body {
+    background-color: #eb708b;
+    height: 100%;
+  }
+  
+  .center {
+    margin: auto;
+    margin-top: 90px;
+  }
+  
+  #header {
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 3rem;  
+  }
+  
+  h2 {
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  }
+  
+  .book-list {
+    margin-top: 50px;
+    visibility: hidden;
+  }
