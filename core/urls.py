@@ -16,9 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from bookshelf import views
+from django.contrib.auth import views as auth_views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name="home"),
     path('book.html', views.book_detail, name="viewUrl"),
+    path('register/login', views.register, name='register'),
+    path('accounts/login/', auth_views.LoginView.as_view(template_name='bookshelf/login.html'), name='login'),
+    path('logout/', auth_views.LogoutView.as_view(template_name='bookshelf/logout.html'), name='logout'),
 ]
