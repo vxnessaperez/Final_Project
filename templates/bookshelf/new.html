@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>new review</title>
+</head>
+
+<body>
+    <div class="content">
+        <div class="form-container">
+            {% block title %}{% endblock %}
+            {% block content %}
+            <div id="title" class="center" style="margin-top: 5px;">
+            <h1 id="header" class="text-center mt-5">book reviews</h1>
+            <h4>Create New Review</h4>
+            <form method="post">
+                <table>
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                </table>
+                <button type="submit">done</button>
+            </form>
+            {% endblock %}
+        </div>
+    </div>
+
+
+<style>
+    body {background-color: #dfdfdf; text-align: center;}
+</style>
+</body>
+
+</html>
+
+
