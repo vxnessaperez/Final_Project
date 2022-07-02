@@ -1,12 +1,11 @@
 {% block content %}
-
-<div album='tc'>
+<div class='tc'>
 <h1>Edit {{ selected_review }}</h1>
-<form album='tl' action="" method="post">
+<form class='tl' action="" method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Save</button>
 </form>
-</div>
 
+</div>
 {% endblock %}

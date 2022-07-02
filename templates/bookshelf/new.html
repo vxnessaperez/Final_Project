@@ -25,22 +25,22 @@
             <table class="f4 w-100 mw8 center">
                 <thread>
                     <tr class="stripe-dark"></tr>
-                        <th class="bg-grey">Title:</th>
-                        <th class="bg-grey">Author:</th>
-                        <th class="bg-grey">Book Review:</th>
+                    <th class="bg-grey">Title:</th>
+                    <th class="bg-grey">Author:</th>
+                    <th class="bg-grey">Book Review:</th>
                     </tr>
                 </thread>
                 <tbody>
-                {% for review in reviews %}
-                <tr class="stripe-dark">
-                    <td>{{review}}</td>
+                    {% for review in reviews %}
+                    <tr class="stripe-dark">
+                        <td>{{review}}</td>
                         <td>{{review.author_name}}</td>
                         <td>{{review.review}}</td>
-                    {% for review in review.author.all %}
-                    <td>{{review}}</td>
-                    {% endfor %}
-                </tr>
-                {% endfor%}
+                        {% for review in review.author.all %}
+                        <td>{{review}}</td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor%}
                 </tbody>
             </table>
         </section>
@@ -50,13 +50,12 @@
                 {% block title %}{% endblock %}
                 {% block content %}
                 <div id="title" class="center" style="margin-top: 5px;">
-                    <!-- <h1 id="header" class="text-center mt-5">Book Reviews</h1> -->
                     <form method="post">
                         <table>
                             {% csrf_token %}
                             {{ form.as_p }}
                         </table>
-                        <button type="submit">submit</button>
+                        <button type="submit">Add Review</button>
                     </form>
                     {% endblock %}
                 </div>
