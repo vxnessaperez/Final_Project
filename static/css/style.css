@@ -53,8 +53,8 @@ a {
 table {
     margin-top: 50px;
     text-align: center;
-    background: #333;
-    color: #fff;
+    background: rgb(211, 211, 211);
+    color: rgb(0, 0, 0);
 }
 
 #show th,
@@ -68,12 +68,13 @@ table {
 
 table,
 td {
-    border: 1px solid #333;
+    border: 3px solid rgb(52, 52, 52);
+    
 }
 
 thead,
 tfoot {
-    background-color: #333;
+    background-color: rgb(142, 142, 142);
     color: #fff;
 }
 
