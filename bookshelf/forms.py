@@ -1,4 +1,5 @@
 from django import forms
+from django.forms import ModelForm
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import get_user_model
 from bookshelf.models import Review, User
@@ -13,11 +14,7 @@ class UserRegistrationForm(UserCreationForm):
         model = User
         fields = ['username', 'first_name', 'last_name', 'password1', 'password2']
 
-class ReviewForm(forms.ModelForm):
+class ReviewForm(ModelForm):
     class Meta:
         model = Review
-        fields = '__all__'
-        exclude = ('author',)
-        widgets = {
-            'body': forms.Textarea()
-        }
+        fields = ['book_title', 'author_name', 'review']

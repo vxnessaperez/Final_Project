@@ -5,14 +5,17 @@
     <meta charset="utf-8">
     <title>Bookhelf</title>
     <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tachyons/4.11.1/tachyons.min.css">
+
 </head>
 
 <body>
     {% if user.is_authenticated %}
     <div class="alert alert-success" role="alert">
-        <h3>Hello, {{ user.username }} !</h3>
-        <a href="{% url 'logout' %}">LOGOUT</a> <br>
-        <a href="{% url 'new' %}">MY BOOK REVIEWS</a>
+        <h3>Welcome, {{ user.username }} !</h3>
+        <a class="f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-dark-gray" href="{% url 'new' %}">Add Book Review</a>
+        <br>
+        <a class="f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-dark-gray" href="{% url 'logout' %}">Logout</a>
     </div>
     {% else %}
     <div class="alert alert-success" role="alert">
@@ -23,7 +26,7 @@
     {% endif %}
     <div class="container">
         <div id="title" class="center">
-            <h1 id="header" class="text-center mt-5">WELCOME TO BOOKSHELF</h1>
+            <h1 id="header" class="text-center mt-5">BOOKSHELF</h1>
             <div class="row">
                 <div id="input" class="input-group mx-auto col-lg-6 col-md-8 col-sm-12">
                     <input id="search-box" type="text" class="form-control" placeholder="Search Book Topics!...">
@@ -34,8 +37,6 @@
         <div class="book-list">
             <div id="list-output" class="">
                 <div class="row">
-                    <!-- card  -->
-
                 </div>
 
             </div>
